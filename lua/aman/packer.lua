@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
   use('theprimeagen/harpoon')
   use('tpope/vim-fugitive') 
+    
 
 
   use {
@@ -40,5 +41,12 @@ return require('packer').startup(function(use)
   }
 }
 
+    -- adding support for autopair 
+    -- check treesitter config file for customisations. 
+    -- since I am using treesitter to autopair 
+    use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+}
 end)
 
